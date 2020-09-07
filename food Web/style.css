@@ -1,0 +1,149 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+section{
+  padding: 7em 0;
+}
+
+
+.container{
+  width: 85%;
+  max-width: 65em;
+  margin: 0 auto;
+}
+
+.conquer{
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit,minmax(150px , 1fr));
+  justify-items: center;            
+}
+
+.btn{
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: .2em 1.25em;
+  background: blue;
+  border-radius:.25em;
+  transition: transform 250ms ease-in-out,opacity 250ms linear;
+
+}
+
+.btn:hover,
+.btn :focus{
+  transform: scale(1.1);
+  opacity: -9;
+}
+
+.product__title{
+  font-size: 4rem;
+  font-size: clamp(3rem, calc(5vw + 1rem), 4.5rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.section-title{
+  text-align: center;
+  font-size: clamp(3rem, calc(5vw + 1rem), 4.5rem);
+  line-height: 1;
+  margin-bottom: 5rem;
+}
+
+
+.hero {
+  color: white;
+  text-align: center;
+  padding: 15em 0;
+  background: #222;
+}
+
+@supports (background-blend-mode: multiply) {
+  .hero {
+    background: url(../tfjs/img/img1.png),radial-gradient(#444, #111);
+    background-blend-mode: multiply;
+    opacity: 1;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+
+.products{
+  background: silver;
+}
+
+.featured__item{
+  display: block;
+  position: relative;
+  transform: scale(.85);
+  transition: 250ms ease-in-out;
+  
+}
+
+.featured__item:hover,
+.featured__item :focus{
+  transform: scale(1);
+}
+
+.featured__item::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 85% 85% 0 0;
+  border-radius: 50%;
+  background: #FD3E81;
+  z-index: -1;
+}
+
+.product{
+  background: radial-gradient(
+    red , yellow);
+  padding: 3em;
+  border-radius: 1em;
+  margin: 3em;
+  text-align: center;
+  top: 0;
+  left: 0;
+}
+
+.product__title{
+  font-size: 4em;
+  font-size:calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  color: #fff;
+  text-shadow: 0 0 .2em rgba(#000,.2);
+  line-height: 1.1;
+  
+}
+
+footer{
+  text-align: center;
+  font-weight: 0.5em;
+  font-size:calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+  color: #444;
+}
